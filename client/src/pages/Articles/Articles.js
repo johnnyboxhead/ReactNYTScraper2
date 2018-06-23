@@ -9,17 +9,17 @@ import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class Books extends Component {
   state = {
-    books: [],
+    article: [],
     title: "",
     author: "",
     synopsis: ""
   };
 
   componentDidMount() {
-    this.loadBooks();
+    this.loadArticles();
   }
 
-  loadBooks = () => {
+  loadArticles = () => {
     API.getBooks()
       .then(res =>
         this.setState({ books: res.data, title: "", author: "", synopsis: "" })
